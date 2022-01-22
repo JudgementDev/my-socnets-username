@@ -25,7 +25,7 @@ let createImg = (txt) => {
 
 
 app.get("/username/discord", async (req, res) => {
-        res.send(req.params)
+        res.send(req.query)
 	//let response = await fetch("https://discord.com/api/users/638809622236626974", {
 	//	headers: {
 	//		Authorization: `Bot ${process.env.DS_TOK}`

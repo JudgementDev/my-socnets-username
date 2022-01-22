@@ -17,7 +17,7 @@ let createImg = (txt) => {
 	ctx.textAlign = 'center';
 	ctx.fillStyle = 'white';
 	
-	ctx.fillText(txt, 150, 50);
+	ctx.fillText(txt, 150/2, 50/2);
 	
 	return canvas;
 	

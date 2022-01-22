@@ -29,4 +29,8 @@ app.get("/username/telegram", async (req, res) => {
 	res.send('@' + data.result.username);
 })
 
+app.get("/", (req, res) => {
+	setTimeout(() => {fetch("https://my-socnets-username/"), 5000})
+})
+
 app.listen(3000);

@@ -23,8 +23,7 @@ let createImg = (txt, bg) => {
 	
 }
 
-
-app.get("/username/discord", async (req, res) => {
+let draw = async (req, res) => {
         let text = req.query.text;
         let bg = req.query.bg;
         
@@ -36,7 +35,9 @@ app.get("/username/discord", async (req, res) => {
         
 	res.setHeader("Content-Type", "image/png");
 	createImg(data, bg).pngStream().pipe(res);	
-})
+}
+
+app.get("/username/discord", draw)
 
 app.get("/username/telegram", async (req, res) => {
         let text = req.query.text;

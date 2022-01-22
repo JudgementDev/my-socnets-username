@@ -10,7 +10,7 @@ let createImg = (txt) => {
 	let canvas = createCanvas(150, 50);
 	let ctx = canvas.getContext('2d');
 	
-	ctx.fillStyle = 'orange';
+	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, 150, 50);
 	
 	ctx.font = 'monospace 50pt';

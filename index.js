@@ -13,7 +13,7 @@ let createImg = (txt) => {
 	ctx.fillStyle = 'orange';
 	ctx.fillRect(0, 0, 150, 50);
 	
-	ctx.font = 'monospace 30pt';
+	ctx.font = 'monospace 50pt';
 	ctx.textAlign = 'center';
 	ctx.fillStyle = 'white';
 	

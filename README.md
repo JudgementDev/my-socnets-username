@@ -11,3 +11,5 @@ https://my-socnets-username.herokuapp.com/username/{discord, telegram}?text=http
 ```
 https://my-socnets-username.herokuapp.com/username/text/{discord, telegram}
 ```
+
+# SEE EXAMPLE IN MY PROFILE

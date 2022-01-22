@@ -25,27 +25,28 @@ let createImg = (txt) => {
 
 
 app.get("/username/discord", async (req, res) => {
-	let response = await fetch("https://discord.com/api/users/638809622236626974", {
-		headers: {
-			Authorization: `Bot ${process.env.DS_TOK}`
-		}
-	}); 
+        res.send(req.params)
+	//let response = await fetch("https://discord.com/api/users/638809622236626974", {
+	//	headers: {
+	//		Authorization: `Bot ${process.env.DS_TOK}`
+	//	}
+	//}); 
 
-	if (!response.ok) throw new Error(response.status);
+	//if (!response.ok) throw new Error(response.status);
 
-	let data = await response.json();
-	res.setHeader("Content-Type", "image/png");
-	createImg(await data.username + '#' + await data.discriminator).pngStream().pipe(res);	
+	//let data = await response.json();
+	//res.setHeader("Content-Type", "image/png");
+	//createImg(await data.username + '#' + await data.discriminator).pngStream().pipe(res);	
 })
 
 app.get("/username/telegram", async (req, res) => {
-	let response =  await fetch(`https://api.telegram.org/bot${process.env.TG_TOK}/getChat?chat_id=1060084171`)
+	//let response =  await fetch(`https://api.telegram.org/bot${process.env.TG_TOK}/getChat?chat_id=1060084171`)
 
-	if (!response.ok) throw Error(response.status);
+	//if (!response.ok) throw Error(response.status);
 
-	let data =  await response.json();
-	res.setHeader("Content-Type", "image/png");
-	createImg(data.result.username).pngStream().pipe(res);	
+	//let data =  await response.json();
+	//res.setHeader("Content-Type", "image/png");
+	//createImg(data.result.username).pngStream().pipe(res);	
 })
 
 app.get("/username/text/telegram", async (req, res) => {
@@ -69,7 +70,7 @@ app.get("/username/text/discord", async (req, res) => {
 
 	let data = await response.json();
 
-        res.send(data.username);
+        res.send(data.username + "#" + data.discriminator);
 })
 
 app.listen(process.env.PORT || 3000);

@@ -6,11 +6,11 @@ require('dotenv').config()
 
 let app = express();
 
-let createImg = (txt) => {
+let createImg = (txt, bg) => {
 	let canvas = createCanvas(150, 50);
 	let ctx = canvas.getContext('2d');
 	
-	ctx.fillStyle = 'black';
+	ctx.fillStyle = bg;
 	ctx.fillRect(0, 0, 150, 50);
 	
 	ctx.font = 'monospace 50pt';
@@ -25,7 +25,17 @@ let createImg = (txt) => {
 
 
 app.get("/username/discord", async (req, res) => {
-        res.send(req.query)
+        let text = req.query.text;
+        let bg = req.query.bg;
+        
+        let response = await fetch("https://my-socnets-username.herokuapp.com/username/text/discord");
+        
+        if(!response.ok) throw new Error(response.ok);
+
+        let data = await response.text();
+
+        res.send(data);
+        
 	//let response = await fetch("https://discord.com/api/users/638809622236626974", {
 	//	headers: {
 	//		Authorization: `Bot ${process.env.DS_TOK}`

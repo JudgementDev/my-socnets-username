@@ -26,7 +26,7 @@ app.get("/username/telegram", async (req, res) => {
 
 	let data =  await response.json();
 
-	res.send('@' + data.result.username);
+	res.send(data.result.username);
 })
 
 

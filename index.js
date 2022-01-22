@@ -7,17 +7,17 @@ require('dotenv').config()
 let app = express();
 
 let createImg = (txt) => {
-	let canvas = createCanvas(200, 40);
+	let canvas = createCanvas(100, 50);
 	let ctx = canvas.getContext('2d');
 	
 	ctx.fillStyle = 'blue';
-	ctx.fillRect(0, 0, 200, 40);
+	ctx.fillRect(0, 0, 100, 50);
 	
-	ctx.font = 'sans-serif 18pt';
+	ctx.font = 'sans-serif 20pt';
 	ctx.textAlign = 'center';
 	ctx.fillStyle = 'white';
 	
-	ctx.fillText(txt, 100/2, 20/2);
+	ctx.fillText(txt, 100/2, 50/2);
 	
 	return canvas;
 	

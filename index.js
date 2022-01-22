@@ -39,19 +39,7 @@ let draw = async (req, res) => {
 
 app.get("/username/discord", draw)
 
-app.get("/username/telegram", async (req, res) => {
-        let text = req.query.text;
-        let bg = req.query.bg;
-        
-        let response = await fetch(text);
-        if(!response.ok) throw new Error(response.ok);
-
-        let data = await response.text();
-
-        
-	res.setHeader("Content-Type", "image/png");
-	createImg(data, bg).pngStream().pipe(res);
-})
+app.get("/username/telegram", draw);
 
 app.get("/username/text/telegram", async (req, res) => {
         let response =  await fetch(`https://api.telegram.org/bot${process.env.TG_TOK}/getChat?chat_id=1060084171`)

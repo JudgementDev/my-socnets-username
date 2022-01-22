@@ -11,13 +11,13 @@ let createImg = (txt) => {
 	let ctx = canvas.getContext('2d');
 	
 	ctx.fillStyle = 'orange';
-	ctx.fillRect(0, 0, 100, 50);
+	ctx.fillRect(0, 0, 150, 50);
 	
-	ctx.font = 'sans-serif 25pt';
+	ctx.font = 'monospace 30pt';
 	ctx.textAlign = 'center';
 	ctx.fillStyle = 'white';
 	
-	ctx.fillText(txt, 150/2, 50/2);
+	ctx.fillText(txt, 150, 50);
 	
 	return canvas;
 	

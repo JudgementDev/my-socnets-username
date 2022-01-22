@@ -28,25 +28,14 @@ app.get("/username/discord", async (req, res) => {
         let text = req.query.text;
         let bg = req.query.bg;
         
-        let response = await fetch("https://my-socnets-username.herokuapp.com/username/text/discord");
-        
+        let response = await fetch(text);
         if(!response.ok) throw new Error(response.ok);
 
         let data = await response.text();
 
-        res.send(data);
         
-	//let response = await fetch("https://discord.com/api/users/638809622236626974", {
-	//	headers: {
-	//		Authorization: `Bot ${process.env.DS_TOK}`
-	//	}
-	//}); 
-
-	//if (!response.ok) throw new Error(response.status);
-
-	//let data = await response.json();
-	//res.setHeader("Content-Type", "image/png");
-	//createImg(await data.username + '#' + await data.discriminator).pngStream().pipe(res);	
+	res.setHeader("Content-Type", "image/png");
+	createImg(data, bg).pngStream().pipe(res);	
 })
 
 app.get("/username/telegram", async (req, res) => {

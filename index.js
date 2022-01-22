@@ -34,7 +34,7 @@ app.get("/username/discord", async (req, res) => {
 	if (!response.ok) throw new Error(response.status);
 
 	let data = await response.json();
-	res.setHeaders("Content-Type", "image/png");
+	res.setHeader("Content-Type", "image/png");
 	createImg(await data.username + '#' + await data.discriminator).pngStream().pipe(res);	
 })
 
@@ -44,7 +44,7 @@ app.get("/username/telegram", async (req, res) => {
 	if (!response.ok) throw Error(response.status);
 
 	let data =  await response.json();
-	res.setHeaders("Content-Type", "image/png");
+	res.setHeader("Content-Type", "image/png");
 	createImg(data.result.username).pngStream().pipe(res);	
 })
 

@@ -1,0 +1,13 @@
+{
+  "name": "my-socnets-username",
+  "version": "1.0.0",
+  "description": "API for some configuration of GitHub profile",
+  "main": "index.js",
+  "author": "SWCS3",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "node-fetch-commonjs": "^3.1.1"
+  }
+}

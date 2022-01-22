@@ -39,13 +39,17 @@ app.get("/username/discord", async (req, res) => {
 })
 
 app.get("/username/telegram", async (req, res) => {
-	//let response =  await fetch(`https://api.telegram.org/bot${process.env.TG_TOK}/getChat?chat_id=1060084171`)
+        let text = req.query.text;
+        let bg = req.query.bg;
+        
+        let response = await fetch(text);
+        if(!response.ok) throw new Error(response.ok);
 
-	//if (!response.ok) throw Error(response.status);
+        let data = await response.text();
 
-	//let data =  await response.json();
-	//res.setHeader("Content-Type", "image/png");
-	//createImg(data.result.username).pngStream().pipe(res);	
+        
+	res.setHeader("Content-Type", "image/png");
+	createImg(data, bg).pngStream().pipe(res);
 })
 
 app.get("/username/text/telegram", async (req, res) => {

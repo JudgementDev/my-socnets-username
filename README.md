@@ -1,3 +1,6 @@
+
+# DISCLAIMER: THIS SERVICE IS CREATED FOR PERSONAL PURPOSES AND IS NOT INTENDED FOR USE ELSEWHERE
+
 # my-socnets-username
 API for getting my nicknames in socnets for GitHub Profile Page
 

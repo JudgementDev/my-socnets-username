@@ -1,4 +1,10 @@
-const express = require("express");
+const {getData, draw}		= require("./handlers");
+const express 			= require("express");
+const TYPES			= require("./socnetTypes");
+const fetch 			= require("node-fetch-commonjs");
+const fs 			= require("fs");
+
+
 
 let app = express();
 

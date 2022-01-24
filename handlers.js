@@ -3,12 +3,6 @@ const TYPES			= require("./socnetTypes");
 const fetch 			= require("node-fetch-commonjs");
 
 
-/* I'm not so dumb as to leave the tokens in the open. 
-   That's why I use .env files to store data securely. 
-   Because the node.js itself does not see such files, I use the module of the same name
-*/
-require("dotenv").config();
-
 /* Anyone who has worked with canvas knows what's going on here. For the rest, I'll explain
    Here the same badge is created that you see in my github profile (which with the username of discord and telegram)
 */

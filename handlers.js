@@ -4,7 +4,7 @@ const fetch 			= require("node-fetch-commonjs");
 
 require("dotenv").config();
 
-let createImg = (txt, bg, img, color, type) => 
+let createImg = (txt, bg, color, type) => 
 {
 	let canvas = createCanvas(150, 50);
 	let ctx = canvas.getContext('2d');
@@ -29,7 +29,6 @@ let draw = async (req, res) =>
 {
 	let username;
         let bg = req.query.bg;
-        let icon = req.query.icon;
         let color = req.query.color;
         let type = req.query.type
 
@@ -42,7 +41,7 @@ let draw = async (req, res) =>
 
 
 	res.setHeader("Content-Type", "image/png");
-	createImg(username, bg, icon, color, type).pngStream().pipe(res);	
+	createImg(username, bg, color, type).pngStream().pipe(res);	
 }
 
 let getData = async (url, payload) => {

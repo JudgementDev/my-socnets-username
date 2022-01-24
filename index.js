@@ -1,12 +1,4 @@
-const {createCanvas, loadImage} = require("canvas");
-const {getData, draw}		= require("./handlers");
-const express 			= require("express");
-const TYPES			= require("./socnetTypes");
-const fetch 			= require("node-fetch-commonjs");
-const fs 			= require("fs");
-
-
-require('dotenv').config()
+const express = require("express");
 
 let app = express();
 

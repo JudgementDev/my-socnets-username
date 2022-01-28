@@ -1,6 +1,6 @@
 const {createCanvas, loadImage} 	= require("canvas");
-const TYPES								= require("./socnetTypes");
-const fetch 							= require("node-fetch-commonjs");
+const TYPES				= require("./socnetTypes");
+const fetch 				= require("node-fetch-commonjs");
 
 
 /* Anyone who has worked with canvas knows what's going on here. For the rest, I'll explain
@@ -23,7 +23,7 @@ let createImg = (txt, bg, color, type, borderColor, borderSize) =>
 	color != bg && color != undefined ? ctx.fillStyle = color : ctx.fillStyle = "black";
 	
 	// here we draw a frame for our badge
-	borderSize != undefined ? ctx.lineWindth = borderSize : ctx.lineWidth = 4.5;
+	borderSize != undefined ? ctx.lineWidth = borderSize : ctx.lineWidth = 4.5;
 	borderColor != bg && borderColor != undefined ? ctx.strokeStyle = borderColor : ctx.strokeStyle = borderColor;
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 

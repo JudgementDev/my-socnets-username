@@ -48,41 +48,41 @@ Simply put - req is a request, res is a response to a request.
 */
 let draw = async (req, res) => 
 {
-	// This variable has no value, not because it has no value, but because the value will be passed later
-	let username;
+   // This variable has no value, not because it has no value, but because the value will be passed later
+   let username;
 	
-	// Everything should be simple here - we get data from the request
+   // Everything should be simple here - we get data from the request
    let bg = req.query.bg;
    let color = req.query.color;
    let type = req.query.type;
    let borderColor = req.query.borderColor;
    let borderSize = req.query.borderSize;
 	
-	// Now that's more interesting. 
-	// Here we use some kind of asynchronous function that returns a value, namely the data received through the messenger API
+   // Now that's more interesting. 
+   // Here we use some kind of asynchronous function that returns a value, namely the data received through the messenger API
    let data = await getData(TYPES[type].url, TYPES[type].payload);
 	
-	// and here is our "useless" variable, which will soon determine the fate (and value!!!)
+   // and here is our "useless" variable, which will soon determine the fate (and value!!!)
    if (type == "discord")
       username = data.username + "\n#" + data.discriminator;
    else if (type == "telegram")
       username = "t.me/\n" + data.result.username
 
-	// And finally, we display our image on the Internet.
-	// Do not forget about the headers, otherwise the server will swear that this is not a JSON object
-	// Then we create our badge, open the stream in which it will be stored and instantly transfer it to the response so that the user can admire our work :)
-	res.setHeader("Content-Type", "image/png");
-	createImg(username, bg, color, type, borderColor, borderSize).pngStream().pipe(res);	
+   // And finally, we display our image on the Internet.
+   // Do not forget about the headers, otherwise the server will swear that this is not a JSON object
+   // Then we create our badge, open the stream in which it will be stored and instantly transfer it to the response so that the user can admire our work :)
+   res.setHeader("Content-Type", "image/png");
+   createImg(username, bg, color, type, borderColor, borderSize).pngStream().pipe(res);	
 }
 
 // This function, I think, on the shelf does not need to be disassembled. Here we fetch data via messenger API using fetch/
 let getData = async (url, payload) => {
 
-	let response =  await fetch(url, payload);
+   let response =  await fetch(url, payload);
 
-	if (!response.ok) throw Error(response.status);
+   if (!response.ok) throw Error(response.status);
 
-	let data = await response.json();
+   let data = await response.json();
 
    return await data;
 }

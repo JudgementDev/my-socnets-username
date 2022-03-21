@@ -1,8 +1,6 @@
 
-# DISCLAIMER: THIS SERVICE IS CREATED FOR PERSONAL PURPOSES AND IS NOT INTENDED FOR USE ELSEWHERE
-
 # my-socnets-username
-API for getting my nicknames in socnets for GitHub Profile Page
+API for getting my nicknames in social networks for GitHub Profile Page
 
 # link for discord/telegram nick
 ```
@@ -20,5 +18,13 @@ https://my-socnets-username.herokuapp.com/username?type={discord, telegram}&bg=b
 
 
 ###### * - required
+
+```
+TODO:
+- Adding Twitter, Reddit and others social networks
+- Users can create own bages
+- Adding user avatars and making bage clickable
+- Different templates for bages
+```
 
 # SEE EXAMPLE IN MY PROFILE

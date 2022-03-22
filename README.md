@@ -25,6 +25,7 @@ TODO ( please be patient because I'm very lazy :) ):
 - Users can create own bages
 - Adding user avatars and making bage clickable
 - Different templates for bages
+- Making docs for service
 ```
 
 # SEE EXAMPLE IN MY PROFILE

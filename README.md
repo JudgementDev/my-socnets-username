@@ -22,7 +22,7 @@ https://my-socnets-username.herokuapp.com/username?type={discord, telegram}&bg=b
 ```
 TODO ( please be patient because I'm very lazy :) ):
 - Adding Twitter, Reddit and others social networks
-- Users can create own bages
+- ~Users can create own bages ( mission impossible )~
 - Adding user avatars and making bage clickable
 - Different templates for bages
 - Making docs for service

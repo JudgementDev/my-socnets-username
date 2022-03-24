@@ -19,15 +19,17 @@ name_of_socnet: {
 */
 module.exports = {
 	telegram: {
-		url: `https://api.telegram.org/bot${process.env.TG_TOK}/getChat?chat_id=${process.env.TG_ID}`,
-		icon: path.join(__dirname, "./static/telegram.png"),
+		requestURL: `https://api.telegram.org/bot${process.env.TG_TOK}/method?param=arg`,
+		avatarURL: `https://api.telegram.org/file/bot${process.env.TG_TOK}/`,
+		icon: path.join(__dirname, "/static/telegram.png"),
 		payload: {},
 
 
 	},
 	discord: {
-		url: `https://discord.com/api/users/${process.env.DS_ID}`,
-		icon: path.join(__dirname,"./static/discord.png"),
+		requestURL: `https://discord.com/api/users/user_id`,
+		avatarURL: "https://cdn.discordapp.com/avatars/user_id/avatar_id.png",
+		icon: path.join(__dirname,"/static/discord.png"),
 		payload: {
 			headers: {
 				Authorization: `Bot ${process.env.DS_TOK}`

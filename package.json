@@ -5,12 +5,16 @@
   "main": "index.js",
   "author": "SWCS3",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "runtest": "nodemon test.js"
   },
   "dependencies": {
+    "canvas": "^2.9.0",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
-    "node-fetch-commonjs": "^3.1.1",
-    "canvas": "^2.9.0"
+    "node-fetch-commonjs": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

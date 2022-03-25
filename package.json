@@ -6,7 +6,7 @@
   "author": "SWCS3",
   "scripts": {
     "start": "node index.js",
-    "runtest": "nodemon test.js"
+    "test": "nodemon"
   },
   "dependencies": {
     "canvas": "^2.9.0",

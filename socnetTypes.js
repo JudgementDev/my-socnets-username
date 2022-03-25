@@ -11,10 +11,11 @@ require("dotenv").config();
 /* this file stores the data of socnets 
 as you can see, there is a certain structure here
 
-name_of_socnet: {
-        url:"Some endpoint of socnet API",
-        icon: "Path to socnet icon",
-        payload: "Body, headers, head etc. of the request
+name_of_social_network: {
+        requestURL: "URL - social network api endpoint",
+		avatarURL: "URL - location of the avatar"
+        icon: "Path to icon of social network",
+        payload: "Object - neddest parametres for succesfully completing request"
 }
 */
 module.exports = {
@@ -38,3 +39,4 @@ module.exports = {
 		
 	}
 };
+

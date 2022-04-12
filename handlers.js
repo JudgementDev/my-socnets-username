@@ -14,7 +14,7 @@ const fetch 				        = require("node-fetch-commonjs");
  * @param {string} [bg="white"] - Background of badge
  * @param {string} [color="black"] - Color of text, displayed on badge
  * @param {string} [borderColor="bg"] - Color of bage frame
- * @param {*} [borderSize=4.5] - Frame thickness
+ * @param {*} [borderSize=0] - Frame thickness
  */
 
 let createImg = async (txt, bg, color, type, borderColor, borderSize, avatarURL) =>
@@ -39,7 +39,7 @@ let createImg = async (txt, bg, color, type, borderColor, borderSize, avatarURL)
 	color != bg && color != undefined ? ctx.fillStyle = color : ctx.fillStyle = "black";
 	
 	// here we draw a frame for our badge
-	borderSize != undefined ? ctx.lineWidth = borderSize : ctx.lineWidth = 4.5;
+	borderSize != undefined ? ctx.lineWidth = borderSize : ctx.lineWidth = 0;
 	borderColor != bg && borderColor != undefined ? ctx.strokeStyle = borderColor : ctx.strokeStyle = bg;
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
